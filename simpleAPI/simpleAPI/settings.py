@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'compressor'
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -126,8 +126,15 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-COMPRESS_ROOT = BASE_DIR / 'static'
+COMPRESS_ROOT = BASE_DIR / 'static/'
 
 COMPRESS_ENABLED = True
 
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+COMPRESS_EXCLUDE_LIST = (
+    'admin/css/base.css',
+    'admin/css/forms.css',
+    'admin/css/widgets.css',
+)
+# This is the solution for admin problem with tailwindCSS
