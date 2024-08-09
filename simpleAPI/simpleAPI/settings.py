@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'compressor',
+    'tailwind',
+    'theme',
+    
 ]
+TAILWIND_APP_NAME = 'theme'
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+
+# 'compressor',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'simpleAPI.urls'
@@ -123,18 +130,24 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-COMPRESS_ROOT = BASE_DIR / 'static/'
+# COMPRESS_ROOT = BASE_DIR / 'static/'
 
-COMPRESS_ENABLED = True
+# COMPRESS_ENABLED = True
 
-STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
-COMPRESS_EXCLUDE_LIST = (
-    'admin/css/base.css',
-    'admin/css/forms.css',
-    'admin/css/widgets.css',
-)
+
+# COMPRESS_EXCLUDE_LIST = (
+#     'admin/css/base.css',
+#     'admin/css/forms.css',
+#     'admin/css/widgets.css',
+# )
+
+# STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 # This is the solution for admin problem with tailwindCSS
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
